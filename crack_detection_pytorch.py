@@ -70,10 +70,21 @@ transform = transforms.Compose([
 
 train_image_dir = "./datasets/CRACK500/traincrop/traincrop"
 train_mask_dir = "./datasets/CRACK500/traindata/traindata"
+test_image_dir = "./datasets/CRACK500/testcrop/testcrop"
+test_mask_dir = "./datasets/CRACK500/testdata/testdata"
 
 train_dataset = CrackDataset(train_image_dir, train_mask_dir, transform=transform)
 train_loader = DataLoader(train_dataset, batch_size=8, shuffle=True)
+test_dataset = CrackDataset(test_image_dir, test_mask_dir, transform=transform)
+test_loader = DataLoader(test_dataset, batch_size=8, shuffle=True)
 
-for imgs, masks in train_loader:
-    print(imgs.shape, masks.shape)
-    break
+# for imgs, masks in train_loader:
+#     print(imgs.shape, masks.shape)
+#     break
+
+# for imgs, masks in test_loader:
+#     print(imgs.shape, masks.shape)
+#     break
+
+print(len(train_dataset))
+print(len(test_dataset))
