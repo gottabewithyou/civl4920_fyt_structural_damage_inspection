@@ -11,22 +11,22 @@ class CrackDataset(Dataset):
         self.transform = transform
 
         # List all image and mask files
-        image_files = [f for f in os.listdir(image_dir) if f.endswith('.jpg')]
-        mask_files = [f for f in os.listdir(mask_dir) if f.endswith('.png')]
+        image_files = [f for f in os.listdir(image_dir) if f.endswith(".jpg")]
+        mask_files = [f for f in os.listdir(mask_dir) if f.endswith(".png")]
 
         # Helper function to truncate and standardize image bases
         def process_image_name(f):
             base = os.path.splitext(f)[0]
             if base[0].isnumeric():
                 return base[:15]
-            elif base[0] == 'I':
+            elif base[0] == "I":
                 return base[:8]
             else:
                 return base
 
         # Map processed base name to actual file for images and masks
         image_map = {process_image_name(f): f for f in image_files}
-        mask_map = {os.path.splitext(f)[0].removesuffix('_mask'): f for f in mask_files}
+        mask_map = {os.path.splitext(f)[0].removesuffix("_mask"): f for f in mask_files}
 
         # Find common base names
         common_bases = sorted(set(image_map.keys()) & set(mask_map.keys()))
