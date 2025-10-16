@@ -81,11 +81,14 @@ from torch.utils.data import DataLoader
 import matplotlib.pyplot as plt
 
 def test_crack_dataset():
-    # image_dir = "./datasets/CRACK500/traindata/traindata"   # replace with your train image folder
-    # mask_dir = "./datasets/CRACK500/traindata/traindata_mask"    # replace with your train mask folder
+    # image_dir = "./datasets/CRACK500/traindata/traindata"
+    # mask_dir = "./datasets/CRACK500/traindata/traindata_mask"
 
-    image_dir = "./datasets/CRACK500/testdata/testdata"   # replace with your train image folder
-    mask_dir = "./datasets/CRACK500/testdata/testdata_mask"    # replace with your train mask folder
+    # image_dir = "./datasets/CRACK500/testdata/testdata"
+    # mask_dir = "./datasets/CRACK500/testdata/testdata_mask"
+
+    image_dir = "./datasets/CRACK500/valdata/valdata"
+    mask_dir = "./datasets/CRACK500/valdata/valdata_mask"
 
     # Define transforms (must convert images and masks to tensors)
     transform = transforms.Compose([
@@ -105,21 +108,21 @@ def test_crack_dataset():
     print(f"Images shape: {images.shape}")  # Expect [batch_size, 3, 256, 256]
     print(f"Masks shape: {masks.shape}")    # Expect [batch_size, 1, 256, 256]
 
-    # Plot first image and mask pair for visual verification
-    img = images[0].permute(1, 2, 0).numpy()
-    mask = masks[0].squeeze(0).numpy()
+    # # Plot first image and mask pair for visual verification
+    # img = images[0].permute(1, 2, 0).numpy()
+    # mask = masks[0].squeeze(0).numpy()
 
-    plt.subplot(1, 2, 1)
-    plt.title("Image")
-    plt.imshow(img)
-    plt.axis('off')
+    # plt.subplot(1, 2, 1)
+    # plt.title("Image")
+    # plt.imshow(img)
+    # plt.axis('off')
 
-    plt.subplot(1, 2, 2)
-    plt.title("Mask")
-    plt.imshow(mask, cmap='gray')
-    plt.axis('off')
+    # plt.subplot(1, 2, 2)
+    # plt.title("Mask")
+    # plt.imshow(mask, cmap='gray')
+    # plt.axis('off')
 
-    plt.show()
+    # plt.show()
 
 if __name__ == "__main__":
     test_crack_dataset()
