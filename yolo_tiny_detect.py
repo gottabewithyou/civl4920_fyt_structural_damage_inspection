@@ -1,17 +1,3 @@
-from ultralytics import YOLO
-
-# image = r"C:\Kit\HKUST\OneDrive - HKUST Connect\2025~26 Year 4\CIVL 4920 T01 - Civil and Environmental Engineering Final Year Thesis\Resources\20251017 Meeting\crack_image\7Q3A9060-18.jpg"
-
-# # Load the Tiny YOLO model (example: yolov8n.pt as a tiny model variant)
-# model = YOLO('yolov8n.pt')
-
-# # Run inference on the image
-# results = model(image, conf=0.1)
-
-
-# for result in results:
-#     result.show()
-
 import numpy as np
 import os
 from PIL import Image
@@ -70,8 +56,8 @@ def process_masks_and_images(image_dir, mask_dir, label_dir):
         print(f"Processed {base_name} - labels saved to {label_path}")
 
 # Example usage:
-image_folder = r"C:\Kit\HKUST\OneDrive - HKUST Connect\2025~26 Year 4\CIVL 4920 T01 - Civil and Environmental Engineering Final Year Thesis\Coding\datasets\CRACK500\traincrop\traincrop"
-mask_folder = r"C:\Kit\HKUST\OneDrive - HKUST Connect\2025~26 Year 4\CIVL 4920 T01 - Civil and Environmental Engineering Final Year Thesis\Coding\datasets\CRACK500\traincrop\traincrop_mask"
-label_output_folder = r"C:\Kit\HKUST\OneDrive - HKUST Connect\2025~26 Year 4\CIVL 4920 T01 - Civil and Environmental Engineering Final Year Thesis\Coding\datasets\CRACK500\traincrop"
+image_folder = r"C:\Kit\HKUST\OneDrive - HKUST Connect\2025~26 Year 4\CIVL 4920 T01 - Civil and Environmental Engineering Final Year Thesis\Coding\datasets\CRACK500\valcrop\valcrop"
+mask_folder = r"C:\Kit\HKUST\OneDrive - HKUST Connect\2025~26 Year 4\CIVL 4920 T01 - Civil and Environmental Engineering Final Year Thesis\Coding\datasets\CRACK500\valcrop\valcrop_mask"
+label_output_folder = r"C:\Kit\HKUST\OneDrive - HKUST Connect\2025~26 Year 4\CIVL 4920 T01 - Civil and Environmental Engineering Final Year Thesis\Coding\datasets\CRACK500\valcrop\valcrop_label"
 
 process_masks_and_images(image_folder, mask_folder, label_output_folder)
