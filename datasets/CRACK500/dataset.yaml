@@ -1,9 +1,9 @@
 # dataset.yaml
 path: C:\Kit\HKUST\OneDrive - HKUST Connect\2025~26 Year 4\CIVL 4920 T01 - Civil and Environmental Engineering Final Year Thesis\Coding\datasets\CRACK500
 
-train: traincrop/traincrop
-val: valcrop/valcrop
-test: testcrop/testcrop
+train: traincrop/images
+val: valcrop/images
+test: testcrop/images
 
 nc: 1
 
