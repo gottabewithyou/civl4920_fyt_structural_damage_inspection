@@ -1,0 +1,10 @@
+path: CRACK500
+
+train: traincrop/images
+val: valcrop/images
+test: testcrop/images
+
+nc: 1
+
+names:
+  0: crack
