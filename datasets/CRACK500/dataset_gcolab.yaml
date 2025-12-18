@@ -1,8 +1,8 @@
-path: CRACK500
+path: /content/drive/MyDrive/CRACK500
 
 train: traincrop/images
-val: valcrop/images
-test: testcrop/images
+val: valdata/images
+test: testdata/images
 
 nc: 1
 
